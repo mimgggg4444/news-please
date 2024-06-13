@@ -1,4 +1,21 @@
+
 # **news-please** #
+
+faz 독일 신문 페이지
+해당 도메인 페이지 저장 크롤링
+
+뉴욕 타임이 뉴스
+https://www.nytimes.com/international/section/business/economy
+
+해당 뉴스 페이지
+키워드 배열 - 배열안에 들어가있는 keyword 값 있는 html페이지 찾기
+
+키워드 검색 - faz page찾기위한 방법으로서 사용
+find /Users/e/test3/news-please/news-please/newsplease -type f -exec grep -l 'keyword' {} +
+
+저장된 html파일의 string value 있는 html 팢기.
+
+
 
 [![PyPI version](https://img.shields.io/pypi/v/news-please.svg)](https://pypi.org/project/news-please/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4120316.svg)](http://dx.doi.org/10.5281/zenodo.4120316)

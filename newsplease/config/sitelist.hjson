@@ -5,9 +5,11 @@
   # The same URL in combination with the same crawler may only appear once in this array.
   "base_urls" : [
     {
-      # Start crawling from faz.net
-      "url": "http://www.faz.net/",
-
+      # Start crawling from faz.net -> 
+      "url": "http://nytimes.com/international/section/business/",
+      
+      # http://nytimes.com/international/section/business/
+#http://www.faz.net/
       # Overwrite the default crawler and use th RecursiveCrawler instead
       "crawler": "RecursiveCrawler",
 
