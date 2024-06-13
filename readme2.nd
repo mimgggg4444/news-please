@@ -1,0 +1,13 @@
+python env 
+
+python3 -m venv myenv
+
+source myenv/bin/activate
+pip install -r requirements.txt
+
+brew install pipx
+pipx ensurepath
+
+pipx install package_name
+
+brew install package_name
