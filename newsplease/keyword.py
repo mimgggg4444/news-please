@@ -5,7 +5,9 @@ from bs4 import BeautifulSoup
 directory = "/Users/e/news-please-repo"
 
 # 검색할 키워드 배열
-keywords = ["helloaskdjfhalkshjdfaweh"]
+keywords = input("검색할 키워드를 입력하세요 (여러 개인 경우 쉼표로 구분): ").split(",")
+keywords = [keyword.strip() for keyword in keywords]
+
 
 # 키워드가 포함된 HTML 파일 경로와 파일 이름을 저장할 리스트
 matched_files = []
@@ -24,10 +26,9 @@ for root, dirs, files in os.walk(directory):
             soup = BeautifulSoup(html_content, "html.parser")
             
             # 키워드 검색
-            for keyword in keywords:
-                if keyword in soup.get_text():
-                    matched_files.append((file_path, filename))
-                    break  # 하나의 키워드라도 찾으면 다음 파일로 이동
+            # 모든 키워드가 HTML 파일에 포함되어 있는지 확인
+            if all(keyword in soup.get_text() for keyword in keywords):
+                matched_files.append((file_path, filename))
         
 # 결과 출력
 if matched_files:
